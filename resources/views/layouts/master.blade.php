@@ -253,8 +253,10 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">HEADER</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li class="active"><a href="{{route('estado.index')}}"><i class="fa fa-link"></i> <span>Estados</span></a></li>
+        <li><a href="{{route('usuario.index')}}"><i class="fa fa-link"></i> <span>Usuarios</span></a></li>
+        <li><a href="{{route('rol.index')}}"><i class="fa fa-link"></i> <span>Rol</span></a></li>
+        <li><a href="{{route('item.index')}}"><i class="fa fa-link"></i> <span>Item</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">

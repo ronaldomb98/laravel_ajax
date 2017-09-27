@@ -57,6 +57,7 @@ $(document).on('click', ".btnAjax", function () {
 		})
 		.fail(function(d){
 			console.log("error: "+d);
+			console.log(d);
 		});
 	return false;//Evita el reload		
 });
@@ -158,3 +159,45 @@ function destroy(route){
 	    }
 	});	
 }
+
+$(document).ready(function() {
+	$.ajax({
+		url: 'http://localhost:8000/item/routes',
+		type: 'GET'
+	})
+	.done(function(rta) {
+		console.log('success');
+		console.log(rta);
+		rta.forEach(function(item) {
+			$("#ruta").append('<option value="'+item+'">'+item+'</option>');
+		}, this);
+		
+	})
+	.fail(function(err) {
+		console.log("error");
+		console.log(err.responseText);
+	})
+	.always(function() {
+		console.log("complete");
+	});
+
+
+	$.ajax({
+		url: 'http://localhost:8000/estado/all',
+		type: 'GET'
+	})
+	.done(function(rta) {
+		console.log(rta);
+		rta.forEach(function(item) {
+			$("#estado_id").append('<option value="'+item.id+'">'+item.nombre+'</option>');
+		}, this);
+	})
+	.fail(function() {
+		console.log("error");
+	})
+	.always(function() {
+		console.log("complete");
+	});
+
+	
+});
